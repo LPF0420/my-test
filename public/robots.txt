@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: 上线后取消注释并填入真实域名，指向自动生成的 sitemap 或站点根
+# Sitemap: https://example.com/sitemap.xml

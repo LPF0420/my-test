@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   设计 token —— 全站唯一的样式配置入口（Tailwind v4 无需 tailwind.config.js）
+   改色板 / 圆角 / 阴影 / 字体，只改这里。
+   ========================================================================== */
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+
+  /* 主色：低饱和墨蓝，商务稳重。brand-600 作主按钮底色，白字对比度 ≈ 6.1:1 */
+  --color-brand-50: #f2f6fb;
+  --color-brand-100: #e4edf7;
+  --color-brand-200: #c8dbef;
+  --color-brand-300: #a2c0de;
+  --color-brand-400: #749fc7;
+  --color-brand-500: #4e7fa9;
+  --color-brand-600: #3b6689;
+  --color-brand-700: #2f526d;
+  --color-brand-800: #283f52;
+  --color-brand-900: #233947;
+
+  /* 中性色：微暖灰，比纯灰更柔和 */
+  --color-ink-50: #f7f7f5;
+  --color-ink-100: #f1f1ee;
+  --color-ink-200: #e6e6e1;
+  --color-ink-300: #d5d5ce;
+  --color-ink-400: #b0b0a8;
+  --color-ink-500: #8a8a82;
+  --color-ink-600: #6b6b64;
+  --color-ink-700: #4f4f49;
+  --color-ink-800: #383833;
+  --color-ink-900: #23231f;
+
+  /* 语义别名：组件优先用这四个，后续换主题成本最低 */
+  --color-canvas: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-line: #e6e6e1;
+  --color-line-strong: #d5d5ce;
+
+  /* 字号：display/h2 用 clamp 做流体缩放，无需断点覆盖 */
+  --text-display: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  --text-display--line-height: 1.18;
+  --text-display--letter-spacing: -0.02em;
+  --text-h2: clamp(1.5rem, 1.2rem + 1.1vw, 2rem);
+  --text-h2--line-height: 1.32;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h3: 1.125rem;
+  --text-h3--line-height: 1.55;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.85;
+
+  --radius-card: 1rem;
+
+  --shadow-card: 0 1px 2px rgb(20 24 29 / 0.04), 0 8px 24px -12px rgb(20 24 29 / 0.1);
+  --shadow-lift: 0 2px 4px rgb(20 24 29 / 0.05), 0 16px 32px -16px rgb(20 24 29 / 0.16);
+
+  --container-content: 72rem;
+  --container-narrow: 46rem;
+}
+
+/* 移动端菜单展开：位移极小，避免浅色商务风里出现夸张动效 */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer base {
+  body {    @apply bg-canvas text-ink-700 antialiased;
+    /* 中文比英文需要更松的行距；text-wrap: pretty 避免末行孤字 */
+    line-height: 1.75;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-ink-900;
+    text-wrap: balance;
+  }
+
+  /* 锚点跳转时留出 sticky header 的高度，否则标题会被压在导航下面 */
+  section[id],
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-brand-100);
+    color: var(--color-ink-900);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

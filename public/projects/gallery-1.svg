@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#f7f7f5" />
+  <rect x="48" y="48" width="1104" height="704" rx="20" fill="#ffffff" stroke="#e6e6e1" stroke-width="2" />
+
+  <rect x="96" y="96" width="220" height="36" rx="18" fill="#f2f6fb" />
+  <text x="116" y="121" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="16" fill="#3b6689">
+    界面截图占位
+  </text>
+
+  <rect x="96" y="168" width="360" height="14" rx="7" fill="#d5d5ce" />
+  <rect x="96" y="200" width="260" height="14" rx="7" fill="#e6e6e1" />
+
+  <g fill="#f1f1ee">
+    <rect x="96" y="260" width="320" height="200" rx="12" />
+    <rect x="440" y="260" width="320" height="200" rx="12" />
+    <rect x="784" y="260" width="320" height="200" rx="12" />
+  </g>
+  <g fill="#e4edf7">
+    <rect x="120" y="284" width="180" height="12" rx="6" />
+    <rect x="464" y="284" width="180" height="12" rx="6" />
+    <rect x="808" y="284" width="180" height="12" rx="6" />
+  </g>
+
+  <rect x="96" y="504" width="1008" height="200" rx="12" fill="#f7f7f5" stroke="#e6e6e1" />
+
+  <text x="96" y="752" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#8a8a82">
+    TODO: 替换为项目截图，或删除 gallery 中的该项
+  </text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#f1f1ee" />
+      <stop offset="1" stop-color="#e4edf7" />
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#d5d5ce" />
+    </pattern>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg2)" />
+  <rect width="800" height="500" fill="url(#dots)" opacity="0.8" />
+
+  <rect x="500" y="80" width="230" height="230" rx="28" fill="none" stroke="#a2c0de" stroke-width="2" />
+  <rect x="548" y="128" width="134" height="134" rx="20" fill="#c8dbef" opacity="0.55" />
+  <path d="M96 400c60-70 130-70 190 0" fill="none" stroke="#749fc7" stroke-width="2" opacity="0.6" />
+
+  <g font-family="-apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <text x="64" y="248" font-size="15" letter-spacing="6" fill="#4e7fa9">PROJECT COVER</text>
+    <text x="64" y="300" font-size="34" font-weight="600" fill="#4f4f49">TODO: 项目封面占位</text>
+    <text x="64" y="338" font-size="15" fill="#8a8a82">
+      替换为 public/projects/ 下的真实截图，尺寸建议 1600×1000
+    </text>
+  </g>
+</svg>

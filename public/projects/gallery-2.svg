@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <rect width="1200" height="800" fill="#f7f7f5" />
+  <rect x="48" y="48" width="1104" height="704" rx="20" fill="#ffffff" stroke="#e6e6e1" stroke-width="2" />
+
+  <rect x="96" y="96" width="200" height="40" rx="10" fill="#f2f6fb" />
+  <text x="116" y="122" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="15" fill="#3b6689">
+    细节截图占位
+  </text>
+
+  <g>
+    <rect x="96" y="180" width="480" height="420" rx="12" fill="#f1f1ee" />
+    <circle cx="336" cy="390" r="90" fill="#e4edf7" />
+    <path d="M246 430l60-70 55 45 45-35 65 60" fill="none" stroke="#a2c0de" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <g fill="#e6e6e1">
+    <rect x="620" y="180" width="484" height="14" rx="7" />
+    <rect x="620" y="212" width="420" height="14" rx="7" />
+    <rect x="620" y="244" width="460" height="14" rx="7" />
+    <rect x="620" y="276" width="300" height="14" rx="7" />
+  </g>
+
+  <g>
+    <rect x="620" y="330" width="230" height="120" rx="12" fill="#f7f7f5" stroke="#e6e6e1" />
+    <rect x="874" y="330" width="230" height="120" rx="12" fill="#f7f7f5" stroke="#e6e6e1" />
+    <rect x="620" y="470" width="484" height="130" rx="12" fill="#f7f7f5" stroke="#e6e6e1" />
+  </g>
+
+  <text x="96" y="720" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#8a8a82">
+    TODO: 替换为细节截图，如交互状态、数据结构、性能面板
+  </text>
+</svg>
