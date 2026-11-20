@@ -1,0 +1,67 @@
+name: Deploy to GitHub Pages
+
+# main 分支每次 push 自动部署；也可在 Actions 页面手动触发
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# deploy-pages 需要这三项权限，缺一不可
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时刻只允许一个 Pages 部署；排队但不取消正在运行的
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v4
+        # 版本号读取 package.json 的 packageManager 字段
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+
+      - name: 构建（注入 Pages 子路径）
+        run: pnpm build
+        env:
+          GITHUB_PAGES: 'true'
+
+      - name: SPA 深链兜底
+        # GitHub Pages 无服务端 rewrite：直接访问 /projects/xxx 会 404。
+        # 复制一份 index.html 为 404.html，让刷新深链仍能命中前端路由。
+        run: cp dist/index.html dist/404.html
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署
+        id: deployment
+        uses: actions/deploy-pages@v4
